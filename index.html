@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10</title>
+</head>
+<body>
+	<p>Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.</p>
+	<p id="content"></p>
+	<button onclick="createArr()">Khởi tạo mảng</button>
+	<button onclick="showUpTeen()">Hiển thị số nguyên lớn hơn 10</button>
+	<script type="text/javascript">
+		let content = document.querySelector('#content');
+		let arr     = [];
+		function createArr() {
+			for (let i = 0; i < 10; i++) {
+				arr[i] = ((Math.random()*20)+1)>>0;
+			}
+			content.innerText = JSON.stringify(arr);
+		}
+		function showUpTeen() {
+			let up = '';
+			for (let i = 0; i < arr.length; i++) {
+				let data = arr[i];
+				if (data >= 10) {
+					up += data + ', ';
+				}
+			}
+			if (up.length > 0) {
+				alert('Các phần tử lớn hơn hoặc bằng 10: ' + up);
+			}else{
+				alert('Không có phần tử nào lớn hơn hoặc bằng 10.');
+			}
+		}
+	</script>
+</body>
+</html>
